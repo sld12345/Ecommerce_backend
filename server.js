@@ -96,5 +96,6 @@ app.use('/api', orderRoutes);
 const customerRoutes = require("./routes/customer");
 app.use("/api", customerRoutes);
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;  // Use Render's port if available
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
