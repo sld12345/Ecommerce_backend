@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect('mongodb+srv://bakery:manama123@cluster0.mar2kt2.mongodb.net/ecommerce?retryWrites=true&w=majority&appName=Cluster0')
+mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB connected"))
   .catch(err => console.error("MongoDB connection error:", err));
 
